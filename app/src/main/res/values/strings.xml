@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Agmula</string>
+    <string name="calendar">Calendar</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="weather">Weather</string>
+    <string name="plant_database">Plant Database</string>
 </resources>

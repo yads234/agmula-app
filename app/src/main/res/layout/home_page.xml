@@ -4,30 +4,33 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="#2cc179">
+	android:background="@drawable/hp">
 
 	<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 		android:id="@+id/youtube_player_view"
-		android:layout_width="240dp"
-		android:layout_height="174dp"
+		android:layout_width="390dp"
+		android:layout_height="0dp"
 		android:layout_marginStart="44dp"
-		android:layout_marginTop="20dp"
+		android:layout_marginTop="88dp"
 		android:layout_marginEnd="52dp"
+		android:layout_marginBottom="265dp"
+		app:layout_constraintBottom_toTopOf="@+id/cameraButton"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.546"
+		app:layout_constraintHorizontal_bias="0.453"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/textView2" />
+		app:layout_constraintTop_toTopOf="parent" />
 
 	<TextView
 		android:id="@+id/textView2"
 		android:layout_width="149dp"
 		android:layout_height="44dp"
-		android:layout_marginTop="28dp"
+		android:layout_marginTop="24dp"
 		android:fontFamily="@font/audiowide"
 		android:text="Agmula"
-		android:textColor="#000000"
+		android:textColor="@color/white"
 		android:textSize="34sp"
 		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.595"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,9 +38,8 @@
 		android:id="@+id/imageView8"
 		android:layout_width="120dp"
 		android:layout_height="120dp"
-		android:layout_marginStart="56dp"
-		android:layout_marginTop="32dp"
-		android:background="#186b43"
+		android:layout_marginStart="52dp"
+		android:layout_marginTop="40dp"
 		android:onClick="seeAvailPlants"
 		android:src="@drawable/checkdb"
 		app:layout_constraintStart_toEndOf="@+id/imageView7"
@@ -45,25 +47,22 @@
 
 	<ImageButton
 		android:id="@+id/imageButton8"
-		android:layout_width="295dp"
-		android:layout_height="104dp"
-		android:layout_marginBottom="116dp"
+		android:layout_width="45dp"
+		android:layout_height="45dp"
+		android:layout_marginTop="16dp"
+		android:layout_marginEnd="16dp"
 		android:backgroundTint="#186b43"
 		android:onClick="seeForecast"
 		android:src="@drawable/weather"
-		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="@+id/imageView10"
-		app:layout_constraintVertical_bias="0.858" />
+		app:layout_constraintTop_toTopOf="parent" />
 
 	<ImageView
 		android:id="@+id/imageView7"
 		android:layout_width="120dp"
 		android:layout_height="120dp"
 		android:layout_marginStart="56dp"
-		android:layout_marginTop="32dp"
-		android:background="#186b43"
+		android:layout_marginTop="40dp"
 		android:onClick="seeCalendar"
 		android:src="@drawable/calendar"
 		app:circularflow_defaultRadius="30dp"
@@ -77,30 +76,52 @@
 		android:layout_height="wrap_content"
 		android:layout_marginStart="84dp"
 		android:layout_marginTop="12dp"
-		android:text="Calendar"
+		android:text="@string/calendar"
+		android:textColor="@color/white"
+		android:textSize="18sp"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
 	<TextView
 		android:id="@+id/textView9"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
+		android:layout_width="144dp"
+		android:layout_height="26dp"
 		android:layout_marginTop="12dp"
 		android:layout_marginEnd="52dp"
-		android:text="Disease/Plant Database"
-		android:textSize="12sp"
+		android:text="@string/plant_database"
+		android:textAlignment="center"
+		android:textColor="@color/white"
+		android:textSize="18sp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="1.0"
 		app:layout_constraintStart_toEndOf="@+id/textView6"
 		app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
-	<TextView
-		android:id="@+id/textView10"
+	<Button
+		android:id="@+id/cameraButton"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Weather"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+		android:layout_marginStart="68dp"
+		android:layout_marginBottom="156dp"
+		android:onClick="openCamera"
+		android:text="@string/camera"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<Button
+		android:id="@+id/galleryButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="240dp"
+		android:onClick="openGallery"
+		android:text="Gallery"
+		app:layout_constraintBaseline_toBaselineOf="@+id/cameraButton"
+		app:layout_constraintStart_toEndOf="@+id/textView9"
+		app:layout_constraintStart_toStartOf="parent" />
+
+	<androidx.constraintlayout.helper.widget.Flow
+		android:id="@+id/flow"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
